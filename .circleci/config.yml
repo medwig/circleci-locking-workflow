@@ -3,13 +3,13 @@ version: 2
 jobs:
   acquire_lock:
     docker:
-      - image: circleci/python:alpine
+      - image: circleci/python:3.6.5
     steps:
       - checkout
       - run: echo 1 - acquiring lock
   test:
     docker:
-      - image: circleci/python:alpine
+      - image: circleci/python:3.6.5
     steps:
       - checkout
       - run: echo 2 - running tests
