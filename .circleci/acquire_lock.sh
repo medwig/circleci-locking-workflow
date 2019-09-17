@@ -18,7 +18,7 @@ echo $runningBuilds
 echo "build_num.:$CIRCLE_BUILD_NUM"
 isThisBuild=$(echo $runningbuilds | grep "build_num.:$CIRCLE_BUILD_NUM")
 
-echo isThisBuild
+echo $isThisBuild
 
 if [ -z "$isThisBuild" ];
 then
