@@ -1,23 +1,25 @@
 version: 2
 
 jobs:
-  build:
+  acquire_lock:
     docker:
-      - image: circleci/python:3.6.5
+      - image: circleci/python:alpine
     steps:
       - checkout
-      - run: echo 1
+      - run: echo '1: acquiring lock'
   test:
     docker:
-      - image: circleci/python:3.6.5
+      - image: circleci/python:alpine
     steps:
       - checkout
-      - run: echo 2
+      - run: echo '2: running tests'
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
-      - test
+      - acquire_lock
+      - test:
+          requires:
+            - acquire_lock
 
