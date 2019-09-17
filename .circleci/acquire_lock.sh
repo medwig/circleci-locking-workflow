@@ -20,7 +20,7 @@ isThisBuild=$(echo $runningbuilds | grep "build_num.:$CIRCLE_BUILD_NUM")
 
 echo $isThisBuild
 
-if [ -z "$isThisBuild" ];
+if test -z "$isThisBuild"
 then
     echo 'Another build is running. Wait for it to finish'
     exit 1
