@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: echo 1 - acquiring lock
-      - run: sleep 30
+      - run: sleep 3
       - run: ./.circleci/acquire_lock.sh
   test:
     docker:
