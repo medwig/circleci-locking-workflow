@@ -7,6 +7,7 @@ jobs:
     steps:
       - checkout
       - run: echo 1 - acquiring lock
+      - run: ./acquire_lock.sh
   test:
     docker:
       - image: circleci/python:3.6.5
