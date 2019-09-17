@@ -6,13 +6,13 @@ jobs:
       - image: circleci/python:alpine
     steps:
       - checkout
-      - run: echo '1: acquiring lock'
+      - run: echo "1: acquiring lock"
   test:
     docker:
       - image: circleci/python:alpine
     steps:
       - checkout
-      - run: echo '2: running tests'
+      - run: echo "2: running tests"
 
 workflows:
   version: 2
