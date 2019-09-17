@@ -15,6 +15,8 @@ fi
 echo "A build is running. Check if it is this build..."
 echo $runningBuilds
 
+echo "build_num\":$CIRCLE_BUILD_NUM"
+
 isThisBuild=$(echo $runningbuilds | grep "build_num\":$CIRCLE_BUILD_NUM")
 if [ -z "$isThisBuild" ];
 then
