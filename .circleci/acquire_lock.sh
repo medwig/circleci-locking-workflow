@@ -9,7 +9,9 @@ runningBuilds=$(curl -u $CIRCLE_TOKEN: "$CIRCLE_API/project/github/$CIRCLE_PROJE
 if [ "$runningBuilds" == "$NONE" ];
 then
     echo 'No builds running, lock acquired.'
+    exit 0
 else
     echo 'A build is running, wait for it to finish'
     echo $runningBuilds
+    exit 1
 fi
