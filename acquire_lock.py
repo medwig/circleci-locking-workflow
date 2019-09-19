@@ -1,10 +1,17 @@
 #!/usr/bin/python3
+
 import os
 import sys
 import json
-from urllib.parse import urlencode
-from urllib.request import urlopen
-from urllib.request import Request
+try:
+    from urllib.parse import urlencode
+    from urllib.request import urlopen
+    from urllib.request import Request
+except ImportError:
+    from urllib import urlencode
+    from urllib2 import urlopen
+    from urllib2 import Request
+
 
 LOCK_FAIL_MSG = "Another build is running, wait for it to finish"
 LOCK_PASS_MSG = "No other builds are running. Lock acquired"
