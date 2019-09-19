@@ -11,10 +11,11 @@ jobs:
       - run: ./acquire_lock.py
   test:
     docker:
-      - image: circleci/python:3.6
+      - image: circleci/python:2.7
     steps:
       - checkout
-      - run: echo 2 - running tests
+      - run: echo 2 - acquiring lock \w python2.7
+      - run: ./acquire_lock.py
 
 workflows:
   version: 2
