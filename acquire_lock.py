@@ -14,8 +14,7 @@ print(os.environ)
 headers = {'Accept': 'application/json'}
 params = {
     'limit': 2,
-    'filter': 'running',
-    'circle-token': os.environ['CIRCLE_TOKEN']
+    'filter': 'running'
     }
 url = 'https://circleci.com/api/v1.1/project/github/{user}/{repo}?shallow=true&{params}'.format(
     user=os.environ["CIRCLE_PROJECT_USERNAME"],
