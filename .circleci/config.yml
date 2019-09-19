@@ -4,8 +4,6 @@ jobs:
   acquire_lock:
     docker:
       - image: circleci/python:3.6
-    environment:
-      FOO: bar
     steps:
       - checkout
       - run: echo 1 - acquiring lock
