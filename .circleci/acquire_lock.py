@@ -9,6 +9,8 @@ from urllib.request import Request
 LOCK_FAIL_MSG = "Another build is running, wait for it to finish"
 LOCK_PASS_MSG = "No other builds are running. Lock acquired"
 
+print(os.environ)
+
 headers = {'Accept': 'application/json'}
 params = {
     'limit': 2,
