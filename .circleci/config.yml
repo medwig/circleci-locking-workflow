@@ -4,11 +4,14 @@ jobs:
   acquire_lock:
     docker:
       - image: circleci/python:3.6
+    environment:
+      FOO: bar
+      CIRCLE_TOKEN: $CIRCLE_TOKEN
     steps:
       - checkout
       - run: echo 1 - acquiring lock
       - run: sleep 3
-      - run: ./.circleci/acquire_lock.py
+      - run: ./acquire_lock.py
   test:
     docker:
       - image: circleci/python:3.6
