@@ -2,7 +2,7 @@
 
 CIRCLE_API='https://circleci.com/api/v1.1'
 
-apiUrl="$CIRCLE_API/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME?shallow=true&limit=1&filter=running"
+apiUrl="$CIRCLE_API/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME?shallow=true&limit=2&filter=running"
 runningBuilds=$(curl -u $CIRCLE_TOKEN: -H "Accept: application/json" "$apiUrl")
 
 # If no build is running the response will be "[]" (length=2)

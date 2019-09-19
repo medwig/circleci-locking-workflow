@@ -3,15 +3,15 @@ version: 2
 jobs:
   acquire_lock:
     docker:
-      - image: circleci/python:3.6.5
+      - image: circleci/python:3.6
     steps:
       - checkout
       - run: echo 1 - acquiring lock
       - run: sleep 3
-      - run: ./.circleci/acquire_lock.sh
+      - run: ./.circleci/acquire_lock.py
   test:
     docker:
-      - image: circleci/python:3.6.5
+      - image: circleci/python:3.6
     steps:
       - checkout
       - run: echo 2 - running tests
