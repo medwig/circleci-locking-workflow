@@ -45,4 +45,5 @@ CIRCLE_BUILD_NUM = int(os.environ['CIRCLE_BUILD_NUM'])
 assert running_builds[0]["build_num"] == CIRCLE_BUILD_NUM, LOCK_FAIL_MSG
 
 # All asserts met - pass
+print("The current build is the only one running")
 print(LOCK_PASS_MSG)
